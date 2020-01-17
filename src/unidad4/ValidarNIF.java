@@ -16,7 +16,6 @@ public class ValidarNIF {
 		String[] letrasNIF = { "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V",
 				"H", "L", "C", "K", "E" };
 		String copyDNI = DNI;
-		int exc = 0;
 		try {
 			// Caso de NIE extranjero
 			if (DNI.substring(0, 1).equals("X")) {
@@ -26,21 +25,14 @@ public class ValidarNIF {
 			} else if (DNI.substring(0, 1).equals("Z")) {
 				DNI = "2" + DNI.substring(1);
 			}
-			exc = 1;
 		} catch (StringIndexOutOfBoundsException ex) {
 			System.out.print("Entrada no válida.");
 			System.exit(1);
 		}
-		exc = 0;
-
 		int numDNI = 0;
 
 		try {
 			numDNI = Integer.parseInt(DNI.substring(0, DNI.length() - 1));
-			exc = 1;
-		/*} catch (StringIndexOutOfBoundsException ex) {
-			System.out.print("Entrada no válida.");
-			System.exit(1);*/
 		} catch (NumberFormatException ex) {
 			System.out.print("Entrada no válida");
 			System.exit(1);
@@ -58,5 +50,6 @@ public class ValidarNIF {
 			return "DNI Correcto";
 		} else
 			return copyDNI + " Incorrecto.\nDNI correcto: " + copyDNI.substring(0, DNI.length() - 1) + letraNIF;
+	
 	}
 }
