@@ -26,6 +26,7 @@ public class Cadenas3 {
 			}while(i!=-1);
 		}
 		System.out.print("La cadena 2 está " + count + ((count == 1) ? " vez " : " veces.") + " en la cadena 1.");
+		in.close();
 	}
 
 }
