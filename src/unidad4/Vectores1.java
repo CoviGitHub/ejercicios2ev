@@ -13,7 +13,7 @@ public class Vectores1 {
 		System.out.println("Longitud vector: " + v1.length);
 		
 		v1[0] = (int) Math.floor(Math.random() * 201 - 100);
-		for (int i = 1; i < v1.length-1; i++) {
+		for (int i = 1; i < v1.length; i++) {
 			v1[i] = (int) Math.floor(Math.random() * 201 - 100);
 			for (int j = 0; j <i; j++) {
 				if (v1[j] == v1[i]) {
