@@ -27,7 +27,8 @@ public class Ejercicio2 {
 		}
 
 		System.out.println("\nLista original sin duplicados listados con forEach");
-		num2.forEach(num5 -> System.out.print(num5 + "  "));
+		Set<Integer> num4 = new HashSet<Integer>(num);
+		num4.forEach(num5 -> System.out.print(num5 + "  "));
 		
 	}
 
