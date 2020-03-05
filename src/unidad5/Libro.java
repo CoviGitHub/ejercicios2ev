@@ -60,5 +60,4 @@ public class Libro {
 		return s.toString();
 	}
 	
-	
 }

@@ -10,6 +10,7 @@ public class PruebaLibro {
 		autores.add(new Autor("Juan Sánchez","jsanchez@gmail.com",Genero.MASCULINO));
 		Libro libro= new Libro("La caja de los truenos", autores ,15f,10);
 		System.out.println(libro);
+		
 	}
 
 }
