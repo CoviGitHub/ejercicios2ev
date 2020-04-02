@@ -1,7 +1,7 @@
 package repaso2ev;
 public class Matrices {
 
-	private static int[][] m;
+	/*private static int[][] m;
 	private static String[][] mS;
 	
 	public Matrices() {
@@ -16,11 +16,11 @@ public class Matrices {
 
 	public static String[][] getmS() {
 		return mS;
-	}
+	}*/
 
 	static int[][] cuadrada1(int dim) {
 		int conta = 1;
-		m = new int[dim][dim];
+		int [][]m = new int[dim][dim];
 		for (int i = 0; i < dim; i++) {
 			for (int j = 0; j < dim; j++) {
 				m[j][i] = conta++;
@@ -31,7 +31,7 @@ public class Matrices {
 
 	static int[][] cuadrada2(int dim) {
 		int conta = 1;
-		m = new int[dim][dim];
+		int [][]m = new int[dim][dim];
 		for (int i = 0; i < dim; i++) {
 			if (i % 2 == 0) {
 				for (int j = 0; j < dim; j++) {
@@ -49,7 +49,7 @@ public class Matrices {
 	static String[][] palindromos(int f, int c) {
 		String[] letra = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
 				"s", "t", "u", "v", "w", "x", "y", "z" };
-		mS = new String[f][c];
+		String [][]mS = new String[f][c];
 		int conta = 0;
 		if (f + c > 27 || f < 1 || c < 1) {
 			mS[0][0] = "null";
