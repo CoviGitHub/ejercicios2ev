@@ -4,18 +4,10 @@ import java.util.Objects;
 
 public abstract class Electrodomestico implements Comparable<Electrodomestico> {
 
-	private double precioBase;
-	private int peso;
+	private double precioBase = 100;
+	private int peso = 5;
 	private Color color;
 	private String consEnerg;
-	
-	public Electrodomestico() {
-		super();
-		this.precioBase = 100;
-		this.peso = 5;
-		this.color = Color.BLANCO;
-		this.consEnerg = "F";
-	}
 
 	public Electrodomestico(double precioBase, int peso) {
 		if (precioBase <= 0 || peso <= 0) {
@@ -24,7 +16,7 @@ public abstract class Electrodomestico implements Comparable<Electrodomestico> {
 		this.precioBase = precioBase;
 		this.peso = peso;
 		this.color = Color.BLANCO;
-		this.consEnerg="F";	
+		this.consEnerg = "F";
 	}
 
 	public Electrodomestico(double precioBase, Color color, String consEnerg, int peso) {
@@ -58,8 +50,8 @@ public abstract class Electrodomestico implements Comparable<Electrodomestico> {
 	}
 
 	public double precioFinal() {
-		double aumentoPrecioCons=0;
-		double aumentoPrecioPeso=0;
+		double aumentoPrecioCons = 0;
+		double aumentoPrecioPeso = 0;
 		if (this.consEnerg.contentEquals("A")) {
 			aumentoPrecioCons = (precioBase * 0.3);
 		} else if (this.consEnerg.contentEquals("B")) {
@@ -89,8 +81,8 @@ public abstract class Electrodomestico implements Comparable<Electrodomestico> {
 
 	@Override
 	public String toString() {
-		return "Color: " + color + ", Consumo Energético: " + consEnerg
-				+ ", Peso: " + peso + ", Precio Base: "+ precioBase;
+		return "Color: " + color + ", Consumo Energético: " + consEnerg + ", Peso: " + peso + ", Precio Base: "
+				+ precioBase;
 	}
 
 	@Override
@@ -114,7 +106,8 @@ public abstract class Electrodomestico implements Comparable<Electrodomestico> {
 	@Override
 	public final int compareTo(Electrodomestico obj) {
 		Electrodomestico elec = (Electrodomestico) obj;
-		int result = elec.getClass().toString().compareTo(getClass().toString());
+		int result = getClass().toString().compareTo(elec.getClass().toString());
+		// int result = elec.getClass().toString().compareTo(getClass().toString()); Para orrden descendente
 		if (result == 0) {
 			result = consEnerg.compareTo(elec.consEnerg);
 			if (result == 0) {

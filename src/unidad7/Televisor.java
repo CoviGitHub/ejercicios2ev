@@ -9,7 +9,6 @@ public class Televisor extends Electrodomestico {
 		super(precioBase, peso);
 		this.pulgadas = 20;
 		this.tipoSint = "DVB-T";
-		super.precioFinal();
 	}
 
 	public Televisor(int pulgadas, String tipoSint, double precioBase, Color color, String consEnerg, int peso) {
@@ -22,13 +21,12 @@ public class Televisor extends Electrodomestico {
 			throw new IllegalArgumentException("Tipos Sintonización: DVB-T o DVB-T2");
 		}
 		this.tipoSint = tipoSint;
-		super.precioFinal();
 	}
 
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + ":\t" + super.toString() + ", " + pulgadas + " pulgadas, Sintonización " + tipoSint
-				+ ", PrecioFinal: " + precioFinal();
+		return getClass().getSimpleName() + ":\t" + super.toString() + ", " + pulgadas + " pulgadas, Sintonización "
+				+ tipoSint + ", PrecioFinal: " + precioFinal();
 	}
 
 }
